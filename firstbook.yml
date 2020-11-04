@@ -1,0 +1,8 @@
+- hosts: localhost
+  become: True
+  tasks:
+    - name: Install htop
+      dnf:
+        name: htop
+        state: present
+        update_cache: True
