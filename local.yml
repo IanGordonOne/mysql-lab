@@ -1,8 +1,11 @@
-- hosts: localhost
-  become: True
-  tasks:
-    -name: Install htop
-     dnf:
-       name: htop
-       state: present
-       update_cache: True
+---
+  - name: "Local Playbook"
+    hosts: localhost
+    connection: local 
+    become: True
+    tasks:
+    - name: Install htop
+      dnf:
+        name: htop
+        state: present
+        update_cache: True
